@@ -217,7 +217,9 @@
                 <div class="container">
                     <div class="section-heading">
                         <p class="eyebrow">Why Us</p>
-                        <h2>Straightforward advice from people who know you.</h2>
+                        <h2>
+                            Straightforward advice from people who know you.
+                        </h2>
                     </div>
 
                     <div class="reason-grid">
@@ -276,13 +278,12 @@
                         </address>
                     </div>
 
-                    <form class="contact-form" action="#" method="post">
-                        <!-- Forminit action and hidden fields can be added here later. -->
+                    <form class="contact-form" id="contact-form" novalidate>
                         <div class="form-row">
                             <label for="name">Name</label>
                             <input
                                 id="name"
-                                name="name"
+                                name="fi-sender-fullName"
                                 type="text"
                                 autocomplete="name"
                                 required
@@ -292,7 +293,7 @@
                             <label for="email">Email</label>
                             <input
                                 id="email"
-                                name="email"
+                                name="fi-sender-email"
                                 type="email"
                                 autocomplete="email"
                                 required
@@ -302,23 +303,30 @@
                             <label for="phone">Phone</label>
                             <input
                                 id="phone"
-                                name="phone"
+                                name="fi-sender-phone"
                                 type="tel"
                                 autocomplete="tel"
+                                placeholder="+64"
                             />
                         </div>
                         <div class="form-row">
                             <label for="message">Message</label>
                             <textarea
                                 id="message"
-                                name="message"
+                                name="fi-text-message"
                                 rows="5"
                                 required
                             ></textarea>
                         </div>
-                        <button class="button" type="submit">
+                        <button class="button" type="submit" data-submit-button>
                             Submit Enquiry
                         </button>
+                        <p
+                            class="form-status"
+                            id="form-status"
+                            role="status"
+                            aria-live="polite"
+                        ></p>
                     </form>
                 </div>
             </section>
@@ -331,6 +339,7 @@
             </div>
         </footer>
 
+        <script src="https://forminit.com/sdk/v1/forminit.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
